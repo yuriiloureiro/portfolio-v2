@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import { LanguageProvider } from "@/src/context/LanguageContext";
+import Navbar from "@/src/components/layout/Navbar";
+import Footer from "@/src/components/layout/Footer";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -85,8 +87,12 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${jetbrainsMono.variable} ${inter.variable}`}
     >
-      <body className="antialiased">
-        <LanguageProvider>{children}</LanguageProvider>
+      <body className="antialiased min-h-screen flex flex-col">
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
