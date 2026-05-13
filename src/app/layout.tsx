@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
+import { LanguageProvider } from "@/src/context/LanguageContext";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -55,8 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Yuri Loureiro — Front-end Developer",
-    description:
-      "Front-end developer with a UX/UI background, building modern web products.",
+    description: "Front-end developer with a UX/UI background.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -85,7 +85,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${jetbrainsMono.variable} ${inter.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }
