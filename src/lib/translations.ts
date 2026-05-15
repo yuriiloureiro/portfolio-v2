@@ -62,6 +62,30 @@ export const translations = {
         design: "Coderhouse",
         design_label: "certificado UX/UI",
       },
+
+      work: {
+        eyebrow: "// featured work",
+        title: "Projetos selecionados.",
+        subtitle:
+          "Quatro projetos que mostram minha range — de WordPress avançado a Next.js full-stack, sempre com foco em performance e experiência do usuário.",
+        view_project: "Ver projeto",
+        view_live: "Ver site live",
+        view_case: "Ver case study",
+        back_to_work: "Voltar aos projetos",
+        next_project: "Próximo projeto",
+        challenge_label: "O Desafio",
+        solution_label: "A Solução",
+        stack_label: "Stack",
+        year_label: "Ano",
+        type_label: "Tipo",
+        client_label: "Cliente",
+        types: {
+          institutional: "Site institucional",
+          ecommerce: "E-commerce",
+          landing: "Landing page",
+          webapp: "App web",
+        },
+      },
     },
     footer: {
       cta_eyebrow: "// próximo passo",
@@ -141,6 +165,31 @@ export const translations = {
         design_label: "UX/UI certified",
       },
     },
+
+    work: {
+      eyebrow: "// featured work",
+      title: "Selected projects.",
+      subtitle:
+        "Four projects that showcase my range — from advanced WordPress to full-stack Next.js, always focused on performance and user experience.",
+      view_project: "View project",
+      view_live: "View live site",
+      view_case: "View case study",
+      back_to_work: "Back to projects",
+      next_project: "Next project",
+      challenge_label: "The Challenge",
+      solution_label: "The Solution",
+      stack_label: "Stack",
+      year_label: "Year",
+      type_label: "Type",
+      client_label: "Client",
+      types: {
+        institutional: "Institutional site",
+        ecommerce: "E-commerce",
+        landing: "Landing page",
+        webapp: "Web app",
+      },
+    },
+
     footer: {
       cta_eyebrow: "// next step",
       cta_title: "Let's build something together.",
