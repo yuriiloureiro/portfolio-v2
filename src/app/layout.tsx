@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import { LanguageProvider } from "@/src/context/LanguageContext";
-import Navbar from "@/src/components/layout/Navbar";
+import TopBar from "@/src/components/layout/TopBar";
+import Sidebar from "@/src/components/layout/Sidebar";
 import Footer from "@/src/components/layout/Footer";
 import "./globals.css";
 
@@ -89,8 +90,9 @@ export default function RootLayout({
     >
       <body className="antialiased min-h-screen flex flex-col">
         <LanguageProvider>
-          <Navbar />
-          <main className="flex-1 pt-16">{children}</main>
+          <TopBar />
+          <Sidebar />
+          <main className="flex-1 pt-9 lg:pl-12">{children}</main>
           <Footer />
         </LanguageProvider>
       </body>

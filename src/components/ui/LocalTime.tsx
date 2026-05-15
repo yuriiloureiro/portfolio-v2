@@ -11,7 +11,7 @@ export default function LocalTime() {
       const formatted = new Intl.DateTimeFormat("en-US", {
         hour: "2-digit",
         minute: "2-digit",
-        hour12: false,
+        hour12: true,
         timeZone: "America/Sao_Paulo",
       }).format(now);
       setTime(formatted);
@@ -21,12 +21,11 @@ export default function LocalTime() {
     return () => clearInterval(id);
   }, []);
 
-  if (!time) return null;
+  if (!time) return <span className="font-mono text-foreground">--:-- --</span>;
 
   return (
-    <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-      <span className="text-success">●</span> {time}{" "}
-      <span className="text-muted-dark">BRT</span>
+    <span className="font-mono text-foreground normal-case tracking-normal">
+      {time}
     </span>
   );
 }
