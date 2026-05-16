@@ -16,6 +16,7 @@ export interface Project {
   year: number;
   stack: string[];
   liveUrl?: string;
+  repoUrl?: string;
   thumb: string; // path em /public
   accentColor: string; // hex pra placeholder/glow
   featured: boolean;
@@ -32,6 +33,7 @@ export const projects: Project[] = [
     year: 2026,
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://scaramuzzi-v2.vercel.app/",
+    repoUrl: "https://github.com/yuriiloureiro/scaramuzzi-v2",
     thumb: "/work/scaramuzzi.webp",
     accentColor: "#C9A66B",
     featured: true,
@@ -61,6 +63,7 @@ export const projects: Project[] = [
     year: 2026,
     stack: ["React", "PHP", "MySQL", "Tailwind CSS"],
     liveUrl: "https://caixinha2026.loureiroyuri.com.br/",
+    repoUrl: "https://github.com/yuriiloureiro/caixinha2026",
     thumb: "/work/caixinha-2026.webp",
     accentColor: "#D4F542",
     featured: true,
@@ -90,6 +93,7 @@ export const projects: Project[] = [
     year: 2025,
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
     liveUrl: "https://site-dra-maiara.vercel.app/",
+    repoUrl: "https://github.com/yuriiloureiro/site-dra-maiara",
     thumb: "/work/maiara-martins.webp",
     accentColor: "#A78BFA",
     featured: true,
@@ -125,6 +129,7 @@ export const projects: Project[] = [
       "PHP",
     ],
     liveUrl: "https://auramax.loureiroyuri.com.br/",
+    repoUrl: "https://github.com/yuriiloureiro/auramax-landingpage",
     thumb: "/work/auramax.webp",
     accentColor: "#F97316",
     featured: true,
@@ -159,4 +164,12 @@ export function getProjectBySlug(slug: string) {
 
 export function getAllSlugs() {
   return projects.map((p) => p.slug);
+}
+
+export function getNextProject(currentSlug: string) {
+  const list = getFeaturedProjects();
+  const currentIndex = list.findIndex((p) => p.slug === currentSlug);
+  if (currentIndex === -1) return list[0];
+  const nextIndex = (currentIndex + 1) % list.length;
+  return list[nextIndex];
 }
